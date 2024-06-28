@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Movie from "../../../component/movie-list";
+// import Movie from "../../../component/movie-list";
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Image from 'next/image';
 
@@ -37,7 +37,11 @@ export default async function Home () {
   return (
     <section className='h-screen pt-20'>
         <div className='grid grid-col-row grid-cols-3 justify-between'>
+<<<<<<< HEAD
         {results.map((result,idx) => 
+=======
+        {results.map((result: { [x: string]: string; },idx: React.Key | null | undefined) => 
+>>>>>>> c5488e4232e653c4234186daabaa9331bf9c8aaa
         <div key={idx}>
           <h1 className='text-black text-xl'>{result['title']}</h1>
           <Image
