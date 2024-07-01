@@ -12,7 +12,7 @@ export default async function Home () {
   const TvResults = tv['results'];
   const trending = await fetchTrendingData();
   const TrendingResults = trending['results'];
-  const recTV = await fetchTrendingData();
+  const recTV = await fetchRecommendedTVShows();
   const RecommendedTV = recTV['results'];
   
   return (
