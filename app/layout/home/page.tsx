@@ -2,7 +2,7 @@ import React from 'react';
 import {fetchPopularMovieData, fetchPopularTVShowsData, fetchTrendingData, fetchRecommendedTVShows} from "../../api/movie.api";
 import Carousel from './component/Carousel';
 import { EmblaOptionsType } from 'embla-carousel'
-import Hero from '../hero/page';
+import Hero from './component/Hero';
 
 export default async function Home () {
   const OPTIONS: EmblaOptionsType = { loop: false }
@@ -14,8 +14,6 @@ export default async function Home () {
   const TrendingResults = trending['results'];
   const recTV = await fetchTrendingData();
   const RecommendedTV = recTV['results'];
-
-  // const img = fetchImg(results['backdrop_path']);
   
   return (
     <section className='h-screen w-screen'>
