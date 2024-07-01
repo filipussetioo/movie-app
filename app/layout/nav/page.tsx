@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
+import Image from 'next/image'
 
 const Nav = () => {
-  const navItem = ['Home','Popular','Movies','TV Shows']
-  const navLink = ['/', '/#about', '/', '/#project']
+  const navItem = ['Home','TV Shows','Movies']
+  const navLink = ['/', '/tvshows', '/']
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState(false)
   
@@ -14,7 +15,7 @@ const Nav = () => {
   }, [])
 
   return (
-    <nav className={"items-center p-3 fixed w-screen z-30 "+ (navbarOpen ?  "bg-black bg-opacity-75 h-full": (scroll ? "bg-slate-950 bg-opacity-25 shadow-xl" : "bg-black"))}>
+    <nav className={"items-center p-3 fixed w-screen z-30 "+ (navbarOpen ?  "bg-black bg-opacity-75 h-full": (scroll ? "bg-black shadow-xl" : "bg-opacity-0"))}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex justify-between lg:w-auto">
           <h1 className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white flex-start"><a href='/'>Movie App</a></h1>
@@ -36,6 +37,13 @@ const Nav = () => {
             ) : null
           ))
         ))}
+        <li className='nav-item'>
+          <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+              <g fill="#fffefe" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"><g transform="scale(5.12,5.12)"><path d="M21,3c-9.39844,0 -17,7.60156 -17,17c0,9.39844 7.60156,17 17,17c3.35547,0 6.46094,-0.98437 9.09375,-2.65625l12.28125,12.28125l4.25,-4.25l-12.125,-12.09375c2.17969,-2.85937 3.5,-6.40234 3.5,-10.28125c0,-9.39844 -7.60156,-17 -17,-17zM21,7c7.19922,0 13,5.80078 13,13c0,7.19922 -5.80078,13 -13,13c-7.19922,0 -13,-5.80078 -13,-13c0,-7.19922 5.80078,-13 13,-13z"></path></g></g>
+            </svg>
+          </a>
+        </li>
           {/* <li className='nav-item'>
             <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
               <DarkModeToggle/>

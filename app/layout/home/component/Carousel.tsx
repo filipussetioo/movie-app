@@ -12,6 +12,7 @@ import {
 
 type SlideType = {
   poster_path: string;
+  original_name: string;
   title: string;
 };
 
@@ -60,10 +61,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   width={200}
                   height={50}
                   alt={slide.title}
+                  className='rounded-lg slider-img'
                 />
-                <div className="embla__slide__number text-xl text-center">
-                  <span>{slide.title}</span>
-                </div>
+                {/* <div className="embla__slide__number text-md text-center">
+                  <span>{
+                    slide.title ? slide.title : slide.original_name
+                  }</span>
+                </div> */}
             </div>
           ))}
         </div>

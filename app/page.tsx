@@ -4,7 +4,7 @@ import HomeLayout from "./layout/home/page";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white">
+    <main className="relative min-h-screen">
       <Nav/>
       <HomeLayout/>
     </main>
