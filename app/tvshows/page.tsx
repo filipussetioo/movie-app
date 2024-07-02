@@ -8,7 +8,9 @@ import Hero from '../layout/home/component/Hero';
 export default async function TVShows() {
     const OPTIONS: EmblaOptionsType = { loop: true }
     const tv = await fetchData('tv','popular?');
-    const popTVid = await fetchLogo(tv['results'][0].id);
+    
+    const popTVid = await fetchLogo('tv',tv['results'][0].id);
+    console.log('aass:'+popTVid)
 
     return (
         <main className="relative min-h-screen">

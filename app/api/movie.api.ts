@@ -51,9 +51,9 @@ export async function fetchRecommendedMovie(){
   }
 }
 
-export async function fetchLogo(movieid:string){
+export async function fetchLogo(type:string,id:string){
   try{
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${movieid}/images`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/images`, options);
     const data = response.json();
 
     return data;

@@ -11,7 +11,7 @@ export default async function Home () {
   const trending = await fetchData('trending','all/','/week?');
   const recTV = await fetchRecommendedTVShows();
   const RecommendedTV = recTV['results'];
-  const popMovieid = await fetchLogo(movies['results'][0].id);
+  const popMovieid = await fetchLogo('movies',movies['results'][0].id);
   // console.log('asdsa'+popMovieid['logos'][0].file_path)
   
   return (
