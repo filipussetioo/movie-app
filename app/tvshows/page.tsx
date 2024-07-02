@@ -10,7 +10,7 @@ export default async function TVShows() {
     const tv = await fetchData('tv','popular?');
     
     const popTVid = await fetchLogo('tv',tv['results'][0].id);
-    console.log('aass:'+popTVid)
+    // console.log('aass:'+popTVid)
 
     return (
         <main className="relative min-h-screen">
